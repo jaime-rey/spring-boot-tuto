@@ -1,0 +1,66 @@
+### FInd All Content
+GET http://localhost:8000/api/content
+
+### Get Content by ID
+GET http://localhost:8000/api/content/1
+
+### Create New Content
+POST http://localhost:8000/api/content
+Content-Type: application/json
+
+{
+  "title": "My First loquesea",
+  "des": "aint wth this shit",
+  "status": "IDEA",
+  "contentType": "COURSE",
+  "dateCreated": "2023-07-19T00:14:26.06443",
+  "dateUpdated": null,
+  "url": ""
+}
+
+### Create New Content invalid title
+POST http://localhost:8000/api/content
+Content-Type: application/json
+
+{
+"title": "",
+"des": "aint wth this shit",
+"status": "IDEA",
+"contentType": "COURSE",
+"dateCreated": "2023-07-19T00:14:26.06443",
+"dateUpdated": null,
+"url": ""
+}
+
+### Update Existing Content
+PUT http://localhost:8000/api/content/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "MY FIRST POST!!!",
+  "des": "ain't wth this shit, FUCK OFF",
+  "status": "IDEA",
+  "contentType": "COURSE",
+  "dateCreated": "2023-07-19T00:14:26.06443",
+  "dateUpdated": "2023-08-30T00:14:26.06443",
+  "url": "http://localhost:8080/my-first-blog-post"
+}
+
+### Update Existing Content with Invalid ID
+PUT http://localhost:8000/api/content/99
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "MY FIRST POST!!!",
+  "desc": "ain't wth this shit, FUCK OFF",
+  "status": "IDEA",
+  "contentType": "COURSE",
+  "dateCreated": "2023-07-19T00:14:26.06443",
+  "dateUpdated": "2023-08-30T00:14:26.06443",
+  "url": "http://localhost:8080/my-first-blog-post"
+}
+
+### Delete Existing Content with Invalid ID
+DELETE http://localhost:8000/api/content/2
